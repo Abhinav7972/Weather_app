@@ -1,7 +1,7 @@
 
 const input = document.querySelector('input#addr');
 const button = document.querySelector('button#get-weather');
-
+const para = document.querySelector('p#display-weather')
 //GEOCODE API :  https://geocode.maps.co/search?q=555+5th+Ave+New+York+NY+10017+US&api_key=YOUR_SECRET_API_KEY
 
 //geocode maps url
@@ -120,6 +120,8 @@ function getWeather()
     let weather_code = weather_Data.current.weather_code;
     const desc = weatherDescriptions[weather_code];
     let temp = weather_Data.current.temperature_2m;
+
+    para.textContent = input.value+" "+desc+" "+temp;
     console.log(input.value+" "+desc+" "+temp)
     
    })
