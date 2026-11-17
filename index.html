@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Weather APP</title>
-</head>
-<body>
-    <label for="addr">Please enter address :</label>
-    <input type="text" id="addr">
-     <button id="get-weather">Get Weather</button>
-     <p id="display-weather"></p>
-     <script src="config.js"></script>
-     <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="weather-app">
+      <section class="weather-card" aria-label="Weather search form">
+        <p class="eyebrow">Forecast</p>
+        <h1>Check the weather</h1>
+
+        <label for="addr" class="sr-only">Enter an address</label>
+        <div class="search-row">
+          <input
+            type="text"
+            id="addr"
+            name="addr"
+            placeholder="Enter an address"
+            aria-label="Enter address"
+          />
+          <button id="get-weather" type="button">Get Weather</button>
+        </div>
+
+        <p id="display-weather" class="weather-output" aria-live="polite">
+          Enter a location to see the current weather.
+        </p>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
