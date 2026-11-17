@@ -1,64 +1,64 @@
 # Weather App
 
-This project is a simple front-end weather application built with HTML, CSS, and JavaScript. It allows users to enter a location, converts that location into coordinates using the Geocode API, and fetches the current weather information from Open-Meteo.
-
-## Current progress
-
-The app is in a working prototype stage:
-
-- A location input field and button are included in the page
-- The user can type an address or place name
-- The app fetches latitude and longitude from the Geocode API
-- The latitude and longitude are passed to Open-Meteo for current weather data
-- Weather codes are mapped to readable human-friendly descriptions
-- The current temperature and weather condition are logged in the browser console
+This project is a simple front-end weather application built with HTML, CSS, and JavaScript. It takes a place name or address, converts it into geographic coordinates using the Geocode API, and then fetches current weather data from Open-Meteo.
 
 ## Features
 
-- Search weather by address or place name
-- Geocode user input into coordinates
-- Fetch real-time weather data from Open-Meteo
-- Convert weather codes into readable labels
-- Lightweight static app with no framework setup
+- Search the weather for any address or location name
+- Convert user input into latitude and longitude via Geocode Maps
+- Fetch current weather conditions from Open-Meteo
+- Translate weather codes into readable descriptions
+- Display results directly on the page in a clean weather card UI
+- Lightweight static app with no build step or framework
+
+## Current status
+
+The app is working as a front-end prototype with a polished interface:
+
+- A weather search form with a modern card layout
+- Input field and button for entering a location
+- Real API calls to Geocode Maps and Open-Meteo
+- Weather conditions shown in the browser UI
+- Responsive styling for desktop and mobile screens
 
 ## Project structure
 
-- `index.html` – page structure and app entry point
-- `style.css` – styling for the interface
-- `script.js` – fetch logic, weather mapping, and event handling
-- `config.js` – API key configuration file
+- `index.html` – page structure and app layout
+- `style.css` – styling and responsive design
+- `script.js` – geocoding logic, weather fetch logic, and UI updates
+- `config.js` – API key configuration
 - `README.md` – project documentation
 
 ## Setup
 
 1. Clone the repository.
 2. Get a free API key from Geocode Maps: https://geocode.maps.co/
-3. Open `config.js` and replace the example key with your real key:
+3. Open `config.js` and replace the placeholder with your real key:
 
 ```js
 const API_KEY = 'YOUR_API_KEY';
 ```
 
-4. Run a local web server from the project directory:
+4. Start a local web server from the project folder:
 
 ```bash
 python -m http.server 8000
 ```
 
 5. Open `http://localhost:8000` in your browser.
-6. Enter a location such as "New York" or "Bengaluru" and click the button.
+6. Enter a place such as "New York", "Bengaluru", or a full address and click the button.
 
 ## How it works
 
-1. The user enters a place name or address.
-2. `script.js` reads the input and calls the Geocode API using `API_KEY`.
-3. The first matching result is used to get latitude and longitude.
-4. The app calls the Open-Meteo weather endpoint with those coordinates.
-5. The current weather details are extracted and displayed in the console.
+1. The user enters a location name or address.
+2. The app sends that value to the Geocode API with the configured API key.
+3. The first matching result is used to obtain latitude and longitude.
+4. Those coordinates are passed to the Open-Meteo forecast API.
+5. The weather code and temperature are converted into readable output and displayed in the UI.
 
 ## Notes
 
-- This is a static front-end app and does not yet have a polished UI or a persistent weather display.
-- The project currently logs the result to the browser console instead of rendering it on the page.
-- A valid Geocode API key is required to resolve location names.
-- Future improvements may include a better weather card, error messages, and a more user-friendly interface.
+- A valid Geocode API key is required for location lookup.
+- The app is a static front-end project and does not require any package installation.
+- Weather data is fetched live from public APIs, so internet access is required while using it.
+- This project is ideal for learning how to combine multiple APIs in a simple JavaScript app.
